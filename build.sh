@@ -2,14 +2,12 @@
 
 repos=("safe_app_nodejs" "beaker-plugin-safe-app")
 mkdir repos
-for i in "${repos[@]}"
-do
-git clone https://github.com/maidsafe/$i.git repos/$i
-cd repos/$i
-git checkout gh-pages
-mkdir -p ../../dist/$i
-cp -r * ../../dist/$i
-cd ../..
+for i in "${repos[@]}"; do
+  target="repos/$i"
+  git clone https://github.com/maidsafe/$i $target
+  git -C $target checkout gh-pages
+  mkdir -p dist/$i
+  rsync -rv --exclude=.git $target dist
 done
-mv index.html dist/
+cp index.html dist
 rm -rf repos

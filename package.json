@@ -6,10 +6,10 @@
   "scripts": {
     "start": "npm run build && serve dist",
     "build": "chmod +x ./build.sh && ./build.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf dist repos"
   },
   "author": "Maidsafe.net",
-  "license": "BST",
+  "license": "GPL",
   "devDependencies": {
     "serve": "^10.0.0"
   }
