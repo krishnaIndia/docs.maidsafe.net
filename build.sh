@@ -6,3 +6,4 @@ for i in "${repos[@]}"; do
   git clone --depth 1 --branch gh-pages https://github.com/maidsafe/$i $target
 done
 cp _redirects dist
+rm -rf repos
