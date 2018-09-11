@@ -9,5 +9,5 @@ for i in "${repos[@]}"; do
   mkdir -p dist/$i
   rsync -rv --exclude=.git $target dist
 done
-cp index.html dist
+cp _redirects dist
 rm -rf repos
