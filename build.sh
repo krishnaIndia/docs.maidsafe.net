@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+rm -rf dist
 repos=("safe_app_nodejs" "Whitepapers")
 for i in "${repos[@]}"; do
   target="dist/$i"
